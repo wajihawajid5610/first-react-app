@@ -3,10 +3,10 @@
   on: [push]
 
   jobs:
-  build:
-    runs-on: ubuntu-latest
-    name: Deploying to surge
-    steps:
+    build:
+      runs-on: ubuntu-latest
+      name: Deploying to surge
+      steps:
       - uses: actions/checkout@v2
       - name: Install Node.js
         uses: actions/setup-node@v2-beta
