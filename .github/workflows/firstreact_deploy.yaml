@@ -4,10 +4,10 @@ jobs :
   build:
     runs-on: ubuntu-latest
     steps:
-      runs: actions/checkout@v2
+      runs: actions/checkout@v-2
 
       name: installing nodeJS
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v2-beta
       with: 
         version: 12
 
