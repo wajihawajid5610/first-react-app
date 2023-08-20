@@ -14,7 +14,7 @@
       - name: installing build uning yarn
       - uses: borales/actions-yarn@v2.1.0
         with:
-        cmd:
+          cmd:
             install
 
       - name: build yarn
