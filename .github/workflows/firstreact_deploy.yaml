@@ -1,34 +1,28 @@
-name: first-reactapp
-on:
-  push:
-    branches: 
-        [master]
-jobs :
+  name: Deploy Website
+
+  on: [push]
+
+  jobs:
   build:
     runs-on: ubuntu-latest
+    name: Deploying to surge
     steps:
-      runs: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: 12
 
-      name: installing nodeJS
-      uses: actions/setup-node@v2-beta
-      with: 
-        version: 12
-
-      name: installing build uning yarn
-      uses: borales/actions-yarn@v2
-      with:
+        name: installing build uning yarn
+        uses: borales/actions-yarn@v2
+        with:
         cmd:
             install
 
-      name: build yarn
-      uses: yarn build
+        name: build yarn
+        uses: yarn build
 
-
-      name: installing surge
-      runs: npm install -g surge
-
-      name: deploy on surge
-      uses: surge wajiha_first_react_app.surge.sh --token @{{secrets.SURGE_TOKEN_REACT}}
-        
-        
-        
+      - name: Install Surge
+        run: npm install -g surge
+      - name: Run surge
+        run: surge wajiha_first_react_app.surge.sh --token ${{ secrets.SURGE_TOKEN_REACT}}     
