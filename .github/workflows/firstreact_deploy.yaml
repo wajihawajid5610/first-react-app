@@ -17,9 +17,7 @@
           with:
             cmd: install
 
-        - name: Install dependencies
-          run: yarn install
-          
+
         - name: build yarn
           run:  yarn build
         
