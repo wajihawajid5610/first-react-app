@@ -13,13 +13,13 @@
         with:
           node-version: 12
 
-        name: installing build uning yarn
+      - name: installing build uning yarn
         uses: borales/actions-yarn@v2
         with:
         cmd:
             install
 
-        name: build yarn
+      - name: build yarn
         uses: yarn build
 
       - name: Install Surge
