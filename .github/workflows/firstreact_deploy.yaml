@@ -19,6 +19,8 @@
 
         - name: build yarn
           run:  yarn build
+        - name: run yarn
+          run:  yarn run
 
         - name: Install Surge
           run:  npm install -g surge
