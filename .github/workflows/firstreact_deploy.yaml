@@ -18,7 +18,7 @@
             cmd: install
 
         - name: build yarn
-          run:  yarn build
+          run:  npm run build
         
 
         - name: Install Surge
