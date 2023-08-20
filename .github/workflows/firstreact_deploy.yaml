@@ -17,10 +17,15 @@ jobs :
         cmd:
             install
 
+      name: build yarn
+      uses: yarn build
+
+
       name: installing surge
       runs: npm install -g surge
+
       name: deploy on surge
-      uses: surge wajiha_first_react_app.surge.sh --token @{{secrets.SURGE-TOKEN}}
+      uses: surge wajiha_first_react_app.surge.sh --token @{{secrets.SURGE_TOKEN_REACT}}
         
         
         
