@@ -1,0 +1,26 @@
+name: first-reactapp
+on: [push]
+jobs :
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      runs: actions/checkout@v2
+
+      name: installing nodeJS
+      uses: actions/setup-node@v2
+      with: 
+        version: 12
+
+      name: installing build uning yarn
+      uses: borales/actions-yarn@v2
+      with:
+        cmd:
+            install
+
+      name: installing surge
+      runs: npm install -g surge
+      name: deploy on surge
+      uses: surge wajiha_first_react_app.surge.sh --token @{{secrets.SURGE-TOKEN}}
+        
+        
+        
