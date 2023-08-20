@@ -20,6 +20,6 @@
       - run: yarn build
 
       - name: Install Surge
-        run: npm install -g surge
+        run:  npm install -g surge
       - name: Run surge
-        run: surge ./build wajiha_first_react_app.surge.sh --token ${{ secrets.SURGE_TOKEN_REACT}}     
+        run:  surge ./build http://wajiha_first_react_app.surge.sh/ --token ${{ secrets.SURGE_TOKEN_REACT}}     
