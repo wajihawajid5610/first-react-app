@@ -4,23 +4,24 @@
     build:
       runs-on: ubuntu-latest
       steps:
-         uses: actions/checkout@v2
-         
-         name: Install Node.js
-         uses: actions/setup-node@v2-beta
-         with:
-          node-version: '12'
+        - name: prevous actions
+          uses: actions/checkout@v2
 
-          name: installing build uning yarn
+        - name: Install Node.js
+          uses: actions/setup-node@v2-beta
+          with:
+           node-version: '12'
+
+        - name: installing build uning yarn
           uses: Borales/actions-yarn@v2.1.0
           with:
             cmd: install
 
-          name: build yarn
+        - name: build yarn
           run:  yarn build
 
-          name: Install Surge
+        - name: Install Surge
           run:  npm install -g surge
 
-          name: Run surge
+        - name: Run surge
           run:  surge ./build http://wajiha_first_react_app.surge.sh/ --token ${{ secrets.SURGE_TOKEN_REACT}}     
